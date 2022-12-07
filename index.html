@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>attendance</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+
+<body>
+  <!-- add image gif splash -->
+  <div id="imgSdiv">
+    <img id="imgSplash" src="gif.gif" alt="Weather Journal App" id="imgSplash">
+  </div>
+  <!-- main page -->
+  <div id="app">
+    <div class="holder headline">
+      create attendance sheet
+    </div>
+    <!-- information from user input -->
+    <div class="holder profN">
+      <label for="profN" id="profLabel">Enter professor Name</label>
+      <select id="profIn" name="subject">
+        <option>select name</option>
+        <option value="Dr mo'ns">Dr mo'ns</option>
+        <option value="Dr AboBakr">Dr AboBakr</option>
+        <option value="Dr hany">Dr hany</option>
+        <!-- <option value="PS">palestine</option> -->
+      </select>
+    </div>
+    <div class="holder courseN">
+      <label for="courseN" id="corseLabel">Enter course name</label>
+      <select id="courseIn" name="courseN">
+        <option>select course</option>
+        <option value="bsm011">physics 1</option>
+        <option value="bsm013">Math 1</option>
+        <option value="bsm025">Engineering Drawing</option>
+        <option value="bsm023">Math 2</option>
+        <option value="bsm022">computer science</option>
+        <option value="ELC101">Math 3</option>
+        <option value="ELC107">electrical materials</option>
+        <option value="ELC213">electrical Measurements</option>
+        <option value="HUM110">engineering quality</option>
+        <!-- <option value="PS">palestine</option> -->
+      </select>
+    </div>
+    <div class="holder levelTerm">
+      <div>
+        <label for="levelN" id="levelLabel">select level</label>
+        <select id="levelIn" name="levelN">
+          <option>select level</option>
+          <option value="1th level">1</option>
+          <option value="2th level">2</option>
+          <option value="3th level">3</option>
+          <option value="4th level">4</option>
+          <option value="5th level">5</option>
+        </select>
+      </div>
+      <div>
+        <label for="termN" id="termLabel">select term</label>
+        <select id="termIn" name="termN">
+          <option>select term</option>
+          <option value="first term">first term</option>
+          <option value="second term">second term</option>
+          <option value="summer">summer</option>
+          <!-- <option value="PS">palestine</option> -->
+        </select>
+      </div>
+    </div>
+    <div class="holder feel">
+      <button id="generate" type="submit"> Generate </button>
+    </div>
+    <div class="holder entry" id="entryCont">
+      <div class="title">Most Recent Entry</div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <!-- AR TO EN -->
+  <div class="translate">
+    <div id="ArL">Ar</div>
+    <div id="EnL" class="activeBtn">En</div>
+  </div>
+  <script src="app.js" type="text/javascript"></script>
+
+</body>
+
+</html>
