@@ -199,6 +199,7 @@ button:hover {
 
 h1 {
     font-size: 36px;
+    margin-bottom: 0;
 }
 
 textarea {
@@ -265,7 +266,7 @@ button:focus {
     -o-transition: 0.7s all ease-in-out;
 }
 
-#imgSdiv img{
+#imgSdiv img {
     filter: blur(1px);
 }
 
@@ -383,7 +384,7 @@ button:focus {
 }
 
 .arduinoapp .arduino i {
-    height: 10vh;
+    height: fit-content;
     font-size: xxx-large;
     color: rgb(247 66 145);
 }
@@ -409,8 +410,40 @@ button:focus {
     grid-column: 1/3;
 }
 
+.printP {
+    margin: 4vh 0 0;
+}
 
+.printP a {
+    color: #ff9800;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 17px;
+}
 
+.printP a:hover {
+    color: rgb(42 80 153);
+    text-decoration: underline;
+}
+
+.returnM {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.returnM a{
+    margin: 0;
+    color: rgb(247 66 145);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 17px;
+}
+
+.returnM a:hover {
+    color: rgb(42 80 153);
+    text-decoration: underline;
+}
 
 
 

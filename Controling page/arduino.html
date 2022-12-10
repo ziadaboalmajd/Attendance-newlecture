@@ -44,12 +44,17 @@
         </div>
         <div class="holder feel">
             <button id="generate" type="submit"> Next </button>
+            <p class="printP" style="display: none;">
+                <a id="printLink" href="http://localhost:3000/api">print attendance sheet</a>
+            </p>
         </div>
     </div>
     <div class="timeBegan">
         <h4 class="Htime">started on <span id="sTime"></span></h4>
         <h4 class="Htimer">Elapsed time <span id="sTimer"><span id="minutes">00</span>:<span
                     id="seconds">00</span></span>
+    </div>
+    <div class="returnM" style="display: none;"><a id="printLink" href="../index.html">start new lecture</a>
     </div>
 </body>
 <script src="arduino.js" type="text/javascript"></script>

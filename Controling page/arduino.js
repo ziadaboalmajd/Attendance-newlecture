@@ -23,6 +23,8 @@ const secondSpan = document.getElementById("seconds")
 const newLecInfo = document.getElementById("newLecInfo")
 const imgSplash = document.getElementById("imgSdiv")
 const generate = document.getElementById("generate")
+const printP = document.querySelector(".printP");
+const printLink = document.getElementById("printLink")
 
 
 // time variables
@@ -66,8 +68,21 @@ setTimeout(() => {
 // events 
 
 generate.addEventListener("click", function () {
-    window.open("https://rose-awful-scallop.cyclic.app/api");
-    window.open("../index.html", "_self");
+    // window.open("https://rose-awful-scallop.cyclic.app/api");
+    // window.open("../index.html", "_self");
+    let Student;
+    firebase.database().ref().on("value", function (snap) {
+        Student = snap.val().Student;
+        if (Student.length > 2) {
+            printP.style.display = "block"
+        } else {
+            printP.style.display = "none"
+        }
+    });
+});
+
+printLink.addEventListener("click", function () {
+    document.querySelector(".returnM").style.display = "block"
 });
 
 rfid.addEventListener("click", function () {
@@ -102,11 +117,8 @@ function startTimer() {
     }
 
     if (seconds > 59) {
-        console.log(minutes);
         minutes++;
-        console.log(minutes);
         minuteSpan.innerHTML = "0" + minutes;
-        console.log(minutes);
         seconds = 0;
         secondSpan.innerHTML = "0" + 0;
     }
@@ -153,10 +165,9 @@ function alertFun() {
 
 window.onload = function () {
     let newLec;
-
     firebase.database().ref().on("value", function (snap) {
         newLec = snap.val().newLec;
-        if (newLec == "No Data") {
+        if (newLec == "No Data" || newLec == undefined) {
             newLecInfo.style.display = "none";
         } else {
             let levelL;
