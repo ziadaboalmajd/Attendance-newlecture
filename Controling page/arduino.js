@@ -22,6 +22,7 @@ const minuteSpan = document.getElementById("minutes")
 const secondSpan = document.getElementById("seconds")
 const newLecInfo = document.getElementById("newLecInfo")
 const imgSplash = document.getElementById("imgSdiv")
+const generate = document.getElementById("generate")
 
 
 // time variables
@@ -62,27 +63,27 @@ setTimeout(() => {
     imgSplash.style.display = "none";
 }, 2700);
 
-// events
-// elapsed time
+// events 
 
-/*
-// rfid  fun
+generate.addEventListener("click", function () {
+    window.open("https://rose-awful-scallop.cyclic.app/api");
+    window.open("../index.html", "_self");
+});
+
 rfid.addEventListener("click", function () {
-    rfidV++
-    rfidFun()
-})
+    rfidV++;
+    rfidFun();
+});
 
-// alert fun
-alertS.addEventListener("click", function () {
-    alertSV++
-    alertFun()
-})
-// sensor fun
 sensor.addEventListener("click", function () {
-    sensorV++
-    sensorFun()
-})
-*/
+    sensorV++;
+    sensorFun();
+});
+alertS.addEventListener("click", function () {
+    alertSV++;
+    alertFun();
+});
+
 
 // main functions
 function startTimer() {
@@ -115,7 +116,7 @@ function startTimer() {
     }
 }
 
-/*
+
 function rfidFun() {
     if (rfidV % 2 != 0) {
         rfid.classList = "fa-solid fa-toggle-on"
@@ -148,7 +149,7 @@ function alertFun() {
         alertS.style.color = "rgb(247 66 145)"
     }
 }
-*/
+
 
 window.onload = function () {
     let newLec;
@@ -170,81 +171,8 @@ window.onload = function () {
             <h3>date : <span style="color: rgb(42 80 153);">${newLec.today}</span></h3>`
         }
     })
+
     //later
     Interval = setInterval(startTimer, 10);
     startTimer()
-    // data variables 
-    var database = firebase.database();
-    var Led1Status;
-    let Led2Status;
-    let Led3Status;
-    let Led4Status;
-    database.ref().on("value", function (snap) {
-        Led1Status = snap.val().Led1Status;
-        // Led2Status = snap.val().Led2Status;
-        // Led3Status = snap.val().Led3Status;
-        // Led4Status = snap.val().Led4Status;
-        if (Led1Status == "1") {
-            rfid.classList = "fa-solid fa-toggle-on"
-            rfid.style.color = "#2196f3"
-        } else {
-            rfid.classList = "fa-solid fa-toggle-off"
-            rfid.style.color = "rgb(247 66 145)"
-        }
-    })
-
-    rfid.addEventListener("click", function () {
-        var firebaseRef = firebase.database().ref().child("Led1Status");
-        if (Led1Status == "1") {
-            firebaseRef.set("0");
-            Led1Status = "0";
-        } else {
-            firebaseRef.set("1");
-            Led1Status = "1";
-        }
-    });
-
 };
-
-/*
-$(".toggle-btn").click(function(){
-    letfirebaseRef = firebase.database().ref().child("Led1Status");
-    if(Led1Status == "1"){
-        firebaseRef.set("0");
-        Led1Status = "0";
-    } else {
-        firebaseRef.set("1");
-        Led1Status = "1";
-    }
-})
-$(".toggle-btn1").click(function(){
-    letfirebaseRef = firebase.database().ref().child("Led2Status");
-    if(Led2Status == "1"){
-        firebaseRef.set("0");
-        Led2Status = "0";
-    } else {
-        firebaseRef.set("1");
-        Led2Status = "1";
-    }
-})
-$(".toggle-btn2").click(function(){
-    letfirebaseRef = firebase.database().ref().child("Led3Status");
-    if(Led3Status == "1"){
-        firebaseRef.set("0");
-        Led3Status = "0";
-    } else {
-        firebaseRef.set("1");
-        Led3Status = "1";
-    }
-})
-$(".toggle-btn3").click(function(){
-    letfirebaseRef = firebase.database().ref().child("Led4Status");
-    if(Led4Status == "1"){
-        firebaseRef.set("0");
-        Led4Status = "0";
-    } else {
-        firebaseRef.set("1");
-        Led4Status = "1";
-    }
-})
-});*/

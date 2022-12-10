@@ -228,6 +228,13 @@ async function fireBInfo() {
   };
   // fireBase method
   firebase.database().ref("newLec").set(currentCourse);
+  setTimeout(() => {
+    document.getElementById("overlayL").style.display = "block";
+  }, 50);
+  setTimeout(() => {
+    document.getElementById("overlayL").style.opacity = "35%";
+  }, 60);
+  firebase.database().ref("Student").set(["ziad","جنتي"]);
 }
 
 
