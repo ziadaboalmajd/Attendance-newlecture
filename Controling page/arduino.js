@@ -100,7 +100,7 @@ alertS.addEventListener("click", function () {
 
 // set interval esp-connect 
 let conEsp;
-setInterval(checkConn, 10000);
+setInterval(checkConn, 11000);
 
 setInterval(function () {
     if (conEsp == true) {
