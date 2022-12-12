@@ -16,6 +16,7 @@ firebase.initializeApp(firebaseConfig);
 const rfid = document.getElementById("rfid")
 const alertS = document.getElementById("alert")
 const sensor = document.getElementById("sensor")
+const resendLcd = document.getElementById("resendLcd")
 const sTime = document.getElementById("sTime")
 const sTimer = document.getElementById("sTimer")
 const minuteSpan = document.getElementById("minutes")
@@ -84,6 +85,9 @@ printLink.addEventListener("click", function () {
     document.querySelector(".returnM").style.display = "block"
 });
 
+resendLcd.addEventListener("click", function () {
+    firebase.database().ref("newLec/Ardtime").set(d.getTime());
+});
 rfid.addEventListener("click", function () {
     rfidV++;
     rfidFun();
