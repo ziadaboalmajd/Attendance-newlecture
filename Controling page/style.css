@@ -121,6 +121,7 @@ body {
     color: #ff9800;
     font-size: 30px;
     font-weight: 900;
+    margin-bottom: 0;
 }
 
 .title {}
@@ -392,6 +393,7 @@ button:focus {
 #newLecInfo {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin: 0;
     justify-items: center;
     align-items: center;
     text-align: center;
@@ -432,7 +434,7 @@ button:focus {
     text-align: center;
 }
 
-.returnM a{
+.returnM a {
     margin: 0;
     color: rgb(247 66 145);
     text-decoration: none;
@@ -445,10 +447,68 @@ button:focus {
     text-decoration: underline;
 }
 
+.espCon {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    right: 1vh;
+    margin-bottom: 0.5vh;
+    z-index: -2;
+    color: red;
+}
 
+.espCon h5,
+.espCon i {
+    margin-bottom: 0;
+    font-weight: 900;
+    font-size: 12px;
+    text-align: center;
+}
 
+.espCon h5 {
+    padding-left: 0.5vw;
+    font-size: 13px;
+    margin: 0;
+}
 
+.fa-rotate{
+    animation: loading 3s linear infinite;
+}
 
+@keyframes loading {
+    0% {
+        transform: rotate(0);
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+}
+
+    25% {
+        transform: rotate(120deg);
+        -webkit-transform: rotate(120deg);
+        -moz-transform: rotate(120deg);
+        -ms-transform: rotate(120deg);
+        -o-transform: rotate(120deg);
+}
+
+    50% {
+        transform: rotate(225deg);
+        -webkit-transform: rotate(225deg);
+        -moz-transform: rotate(225deg);
+        -ms-transform: rotate(225deg);
+        -o-transform: rotate(225deg);
+}
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+}
 
 
 

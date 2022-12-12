@@ -225,6 +225,7 @@ async function fireBInfo() {
     "time": timeNow,
     "mainTerm": Subject.mTerm,
     "mainLevel": Subject.level,
+    "Ardtime": d.getTime(),
   };
   // fireBase method
   firebase.database().ref("newLec").set(currentCourse);

@@ -66,14 +66,13 @@ setTimeout(() => {
 }, 2700);
 
 // events 
-
 generate.addEventListener("click", function () {
     // window.open("https://rose-awful-scallop.cyclic.app/api");
     // window.open("../index.html", "_self");
     let Student;
     firebase.database().ref().on("value", function (snap) {
         Student = snap.val().Student;
-        if (Student.length > 2) {
+        if (Object.keys(Student).length > 2) {
             printP.style.display = "block"
         } else {
             printP.style.display = "none"
@@ -99,6 +98,42 @@ alertS.addEventListener("click", function () {
     alertFun();
 });
 
+// set interval esp-connect 
+let conEsp;
+setInterval(checkConn, 10000);
+
+setInterval(function () {
+    if (conEsp == true) {
+        document.querySelector(".espCon").innerHTML =
+            `<i class="fa-solid fa-wifi"></i>
+                <h5 >connected</h5>`;
+        document.querySelector(".espCon").style.color = "#49bf4e"
+    } else {
+        document.querySelector(".espCon").innerHTML =
+            `<i class="fa-solid fa-rotate"></i>
+                <h5>connecting</h5>`;
+        document.querySelector(".espCon").style.color = "red"
+    }
+}, 3000);
+
+function checkConn() {
+    firebase.database().ref().on("value", function (snap) {
+        conEsp = snap.val().conEsp
+    });
+    if (conEsp == true) {
+        // document.querySelector(".espCon").innerHTML =
+        //     `<i class="fa-solid fa-wifi"></i>
+        //         <h5 >connected</h5>`;
+        // document.querySelector(".espCon").style.color = "#49bf4e"
+        firebase.database().ref("conEsp").set(false);
+    } 
+    // else {
+        // document.querySelector(".espCon").innerHTML =
+        //     `<i class="fa-solid fa-rotate"></i>
+        //         <h5>connecting</h5>`;
+        // document.querySelector(".espCon").style.color = "red"
+    // }
+}
 
 // main functions
 function startTimer() {
