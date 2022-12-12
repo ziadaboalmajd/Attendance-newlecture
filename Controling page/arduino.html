@@ -19,11 +19,6 @@
     <div id="imgSdiv">
         <img id="imgSplash" src="load.gif" alt="Weather Journal App" id="imgSplash">
     </div>
-    <!-- connect to esp -->
-    <div class="espCon">
-        <i class="fa-solid fa-rotate"></i>
-        <h5>connecting</h5>
-    </div>
     <!-- main page -->
     <div id="app" class="arduinoapp">
         <div class="holder headline">
@@ -49,7 +44,7 @@
             </div>
             <div>
                 <h3>resend</h3>
-                <i class="fa-solid fa-upload"></i>
+                <i class="fa-solid fa-upload" id="resendLcd"></i>
             </div>
         </div>
         <div class="holder feel">
@@ -65,6 +60,11 @@
                     id="seconds">00</span></span>
     </div>
     <div class="returnM" style="display: none;"><a id="printLink" href="../index.html">start new lecture</a>
+    </div>
+    <!-- connect to esp -->
+    <div class="espCon">
+        <i class="fa-solid fa-rotate"></i>
+        <h5>connecting</h5>
     </div>
 </body>
 <script src="arduino.js" type="text/javascript"></script>

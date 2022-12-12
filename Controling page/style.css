@@ -200,7 +200,7 @@ button:hover {
 
 h1 {
     font-size: 36px;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 textarea {
@@ -375,6 +375,9 @@ button:focus {
 .arduinoapp .arduino {
     width: 75vw;
     flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
 }
 
 .arduinoapp .arduino div {
@@ -451,9 +454,6 @@ button:focus {
     display: flex;
     align-items: center;
     flex-direction: row;
-    position: absolute;
-    bottom: 0;
-    right: 1vh;
     margin-bottom: 0.5vh;
     z-index: -2;
     color: red;

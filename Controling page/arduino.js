@@ -86,7 +86,7 @@ printLink.addEventListener("click", function () {
 });
 
 resendLcd.addEventListener("click", function () {
-    firebase.database().ref("newLec/Ardtime").set(d.getTime());
+    firebase.database().ref("/newLec/Ardtime").set((new Date()).getTime());
 });
 rfid.addEventListener("click", function () {
     rfidV++;
