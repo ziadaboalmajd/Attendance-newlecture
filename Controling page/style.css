@@ -454,6 +454,7 @@ button:focus {
     display: flex;
     align-items: center;
     flex-direction: row;
+    position: relative;
     margin-bottom: 0.5vh;
     z-index: -2;
     color: red;
