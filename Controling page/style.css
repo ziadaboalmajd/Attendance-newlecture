@@ -6,6 +6,7 @@
 body {
     background: rgb(238, 174, 202);
     background: linear-gradient(79deg, rgba(238, 174, 202, 0.24825986078886308) 0%, rgba(148, 187, 233, 0.24593967517401394) 100%);
+    font-family: system-ui;
 }
 
 #app {
@@ -16,7 +17,6 @@ body {
     justify-content: flex-start;
     grid-gap: 1em;
     font-size: 20px;
-    font-family: cursive;
     justify-items: center;
     flex-direction: column;
     align-items: center;

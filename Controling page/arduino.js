@@ -210,7 +210,7 @@ window.onload = function () {
             newLecInfo.style.display = "none";
         } else {
             let levelL;
-            newLec.actLevel == "" ? levelL = "not Determine" : levelL = newLec.actLevel
+            newLec.actLevel == "Summer" ? levelL = "not Determine" : levelL = newLec.actLevel
             newLecInfo.innerHTML = `
             <h3>Dr : <span style="color: rgb(42 80 153);">${newLec.DrName}</span></h3>
             <h3> Subject : <span style="color: rgb(42 80 153);">${newLec.courseName}</span></h3>

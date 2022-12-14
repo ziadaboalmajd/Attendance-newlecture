@@ -56,7 +56,7 @@ let coursesData = {
     hourValue: 3
   },
   bsm025: {
-    name: "Engineering Drawing",
+    name: "Drawing",
     level: "1",
     mTerm: "First term",
     hourValue: 4
@@ -74,7 +74,7 @@ let coursesData = {
     hourValue: 3
   },
   bsm022: {
-    name: "computer science",
+    name: "Computer science",
     level: "1",
     mTerm: "Second term",
     hourValue: 3
@@ -86,19 +86,19 @@ let coursesData = {
     hourValue: 3
   },
   ELC107: {
-    name: "electrical materials",
+    name: "Materials",
     level: "2",
     mTerm: "second term",
     hourValue: 3
   },
   ELC213: {
-    name: "electrical Measurements",
+    name: "Measurements",
     level: "3",
     mTerm: "First term",
     hourValue: 3
   },
   HUM110: {
-    name: "engineering quality",
+    name: "Quality",
     level: "any",
     mTerm: "any",
     hourValue: 0
@@ -211,7 +211,7 @@ async function fireBInfo() {
   // creating course data
   Subject = coursesData[courseIn.value];
   doctorName = profIn.value;
-  levelIn.selectedIndex === 0 ? level = "" : level =  levelIn.value;
+  levelIn.selectedIndex === 0 ? level = "Summer" : level =  levelIn.value;
   term = termIn.value;
   let currentCourse = {
     "DrName": doctorName,
@@ -224,7 +224,7 @@ async function fireBInfo() {
     "today": enDate,
     "time": timeNow,
     "mainTerm": Subject.mTerm,
-    "mainLevel": Subject.level,
+    "mainTerm": Subject.mTerm,
     "Ardtime": (d.getTime()).toString(),
   };
   // fireBase method
