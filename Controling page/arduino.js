@@ -116,7 +116,6 @@ setInterval(function () {
         if(sendOnce == 0){
             firebase.database().ref("/newLec/Ardtime").set(((new Date()).getTime()).toString());
             sendOnce = 1;
-            console.log("refresh once lcd");
         }
     } else {
         document.querySelector(".espCon").innerHTML =
