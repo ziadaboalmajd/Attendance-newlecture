@@ -104,6 +104,7 @@ alertS.addEventListener("click", function () {
 
 // set interval esp-connect 
 let conEsp;
+let sendOnce = 0;
 setInterval(checkConn, 11000);
 
 setInterval(function () {
@@ -111,7 +112,12 @@ setInterval(function () {
         document.querySelector(".espCon").innerHTML =
             `<i class="fa-solid fa-wifi"></i>
                 <h5 >connected</h5>`;
-        document.querySelector(".espCon").style.color = "#49bf4e"
+        document.querySelector(".espCon").style.color = "#49bf4e";
+        if(sendOnce == 0){
+            firebase.database().ref("/newLec/Ardtime").set(((new Date()).getTime()).toString());
+            sendOnce = 1;
+            console.log("refresh once lcd");
+        }
     } else {
         document.querySelector(".espCon").innerHTML =
             `<i class="fa-solid fa-rotate"></i>
