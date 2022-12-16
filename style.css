@@ -12,7 +12,7 @@ body {
 #app {
     display: flex;
     grid-auto-rows: minmax(7vh, auto);
-    min-height: 98vh;
+    min-height: 93vh;
     color: rgb(42 80 153);
     justify-content: flex-start;
     grid-gap: 1em;
